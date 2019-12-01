@@ -1,0 +1,19 @@
+Create itinerary.c and write the following functions, which will be used in the main.
+
+Destination* create(char *code) - Dynamically allocates a new node with the airport code data and returns a pointer to that new node.
+
+Destination* insertAfter(Destination *head, Destination *node, char *key) - This function enters a new node, created by the create() function, into the linked list. Normally, the function will add the new node after the node that has an airport code that matches key. However, there are two exceptions to this rule: 1) if the key is equal to the special code ZZZ, add the new node to the front, and 2) if the key was not found in the list, add the new node to the end of the linked list. The function should also handle insertion should the linked list be empty. It returns the head of the linked list.
+
+Destination* find(Destination *head, char *key) - This function traverses the linked list to find a node that has an airport code that matches key and returns it. If it did not find this airport code, it returns NULL.
+
+Destination* removeNode(Destination *head, char *key) - This function traverses the linked list to find a node that has an airport that matches key and removes it from the linked list. If it is not found, nothing happens to the linked list. It returns the head of the linked list. Duplicates are handled during insertion, so you only need to remove the first found node.
+
+void print(Destination *head) - Prints out each destination (airport code) in the itinerary on a separate line. 
+
+void printItinerary(Destination *head) - Prints out the itinerary showing each segment pair between airports on a different line. This requires traversing the linked list and printing out each destination and the next destination. For example, if your linked list had these destinations in this order: SAT,DFW,JFK,LHR the printed itinerary would look like this:
+
+SAT-DFW
+DFW-JFK
+JFK-LHR
+
+Destination* destroy(Destination *head) - Destructor for the linked list. It goes through the entire linked list and free() up each nodes and returns NULL at the end.

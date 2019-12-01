@@ -1,0 +1,414 @@
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: SAT
+SAT added
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: SAT
+ERROR: Destination already exists
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: JFK
+Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list: SAT
+JFK added
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: DFW
+Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list: SAT
+DFW added
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+DFW
+JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-DFW
+DFW-JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: LHR
+Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list: ORD
+LHR added
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+DFW
+JFK
+LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-DFW
+DFW-JFK
+JFK-LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 2
+
+Enter the airport code for the destination to be removed: LHR
+LHR removed
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+DFW
+JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-DFW
+DFW-JFK
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 2
+
+Enter the airport code for the destination to be removed: ASA
+ERROR: Destination does not exist.
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 2
+
+Enter the airport code for the destination to be removed: ASA
+ERROR: Destination does not exist.
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 1
+
+Enter the airport code for the destination: LHR
+Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list: JFK
+LHR added
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+DFW
+JFK
+LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-DFW
+DFW-JFK
+JFK-LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 2
+
+Enter the airport code for the destination to be removed: DFW
+DFW removed
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+SAT
+JFK
+LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+SAT-JFK
+JFK-LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 2
+
+Enter the airport code for the destination to be removed: SAT
+SAT removed
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+JFK
+LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 4
+
+Itinerary
+JFK-LHR
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 5
+
+Itinerary cleared!
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 3
+
+Destinations in Itinerary
+
+#########################################
+#            Trip Planner Menu          #
+#########################################
+        1 - Insert a Destination
+        2 - Remove a Destination
+        3 - Print Destinations
+        4 - Print Itinerary
+        5 - Clear Itinerary
+        0 - Quit
+Enter your selection: 0
+
+Good-bye!
