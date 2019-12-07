@@ -13,7 +13,7 @@ Destination* create(char*);
 Destination* insertAfter(Destination*, Destination*, char*);
 Destination* find(Destination*, char*);
 Destination* removeNode(Destination*, char*);
-void print(Destination*);
+void printDestinations(Destination*);
 void printItinerary(Destination*);
 Destination* destroy(Destination*);
 

@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
                 head = insertAfter(head, newNode, "ZZZ");
 
-                free(newNode);
+                //free(newNode);
                 break;
             case 2:
                 /* 1) ask the user to enter an airport code for the destination
@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
                 break;
             case 4:
                 /* print message to print the itinerary and call printItinerary() */
+                printDestinations(head);
 
                 break;
             case 5:

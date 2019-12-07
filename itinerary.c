@@ -48,29 +48,48 @@ Destination* insertAfter(Destination *head, Destination *node, char *key) {
 }
 
 Destination* find(Destination *head, char *key) {
-    while(head != NULL) {
-        //printf("comparing %s and %s\n", head->airCode, key);
-        if(strcmp(head->airCode, key) == 0) {
+    Destination *tmp = (Destination*)malloc(sizeof(Destination));
+    tmp = head;
+
+    while(tmp != NULL) {
+        if(strcmp(tmp->airCode, key) == 0) {
             return NULL;
         }
 
-        head = head->next;
+        tmp = tmp->next;
     }
     return head;
 }
 
-Destination* removeNode(Destination *head, char *key) {
+//Destination* removeNode(Destination *head, char *key) {
+//}
 
-}
+void printDestinations(Destination *head) {
+    printf("We printin'\n");
+    if(head == NULL) {
+        printf("No Locations added!\n");
+        return;
+    }
 
-void print(Destination *head) {
-
+    while(head != NULL) {
+        printf("%s\n", head->airCode);
+        
+        head = head->next;
+    }
 }
 
 void printItinerary(Destination *head) {
+    if(head == NULL) {
+        printf("No Locations added!\n");
+        return;
+    }
 
+    while(head->next != NULL) {
+        printf("%s-%s", head->airCode, head->next->airCode);
+
+        head = head->next;
+    }
 }
 
-Destination* destroy(Destination *head) {
-
-}
+//Destination* destroy(Destination *head) {
+//}
