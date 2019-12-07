@@ -22,54 +22,58 @@ int main(int argc, char *argv[])
         printf("\n");
         switch(choice)
         {
-        case 1:
-            /* 1) ask the user to enter the airport code for the destination
-                2) check to see if the airport code exists in the list with find(), if it does, print an error and break;
-                3) if the airport code does not exist, call create() to make a new destination node
-                4) if the list is empty, call insertAfter() and insert the node to start a new linked list
-                5) if the list is not empty, ask the user where in the list they want to add the node. The user will enter the airport code for which this new node will be added AFTER in the linked list. Then, call insertAfter() with the user provided key code to insert it into the linked list. Note that if the user enters ZZZ as the airport code, it will add the new node to the beginning and if the user enters an invalid airport code, it adds the new node to the end.
-                6) Print a message saying the destination was added
-            */
-            printf("Enter the airport code for the destination:");
-            fgets(airCodeChoice, 4, stdin);
+            case 1:
+                /* 1) ask the user to enter the airport code for the destination
+                    2) check to see if the airport code exists in the list with find(), if it does, print an error and break;
+                    3) if the airport code does not exist, call create() to make a new destination node
+                    4) if the list is empty, call insertAfter() and insert the node to start a new linked list
+                    5) if the list is not empty, ask the user where in the list they want to add the node. The user will enter the airport code for which this new node will be added AFTER in the linked list. Then, call insertAfter() with the user provided key code to insert it into the linked list. Note that if the user enters ZZZ as the airport code, it will add the new node to the beginning and if the user enters an invalid airport code, it adds the new node to the end.
+                    6) Print a message saying the destination was added
+                */
+                printf("Enter the airport code for the destination:");
+                scanf("%s", airCodeChoice);
 
-            newNode = find(head, airCodeChoice);
-            if(newNode == NULL) {
-                printf("ERROR: Destination already exists\n");
+                if(head != NULL) {
+                    newNode = find(head, airCodeChoice);
+                    if(newNode == NULL) {
+                        printf("ERROR: Destination already exists\n");
+                        break;
+                    }
+                }
+
+                newNode = create(airCodeChoice);
+
+                head = insertAfter(head, newNode, "ZZZ");
+
+                free(newNode);
                 break;
-            }
+            case 2:
+                /* 1) ask the user to enter an airport code for the destination
+                    2) check to see if the airport code exists in the list with find(), if it does not exist, print an error;
+                    3) if it exists, call remove() to remove the airport code from the list  
+                    4) print a message saying the destination was removed
+                */
 
-            newNode = create(airCodeChoice);
+                break;
+            case 3:
+                /* print message to print all the destinations in the itinerary and call print() */
 
-            insertAfter(head, newNode, "ZZZ");
+                break;
+            case 4:
+                /* print message to print the itinerary and call printItinerary() */
 
-            free(newNode);
-            break;
-        case 2:
-            /* 1) ask the user to enter an airport code for the destination
-                2) check to see if the airport code exists in the list with find(), if it does not exist, print an error;
-                3) if it exists, call remove() to remove the airport code from the list  
-                4) print a message saying the destination was removed
-            */
+                break;
+            case 5:
+                /* call destroy() and print the message that the itinerary has been cleared */
 
-            break;
-        case 3:
-            /* print message to print all the destinations in the itinerary and call print() */
-
-            break;
-        case 4:
-            /* print message to print the itinerary and call printItinerary() */
-
-            break;
-        case 5:
-            /* call destroy() and print the message that the itinerary has been cleared */
-
-            break;
-        case 0:
-        default:
-            /* call destroy() and print a farewell message*/
-
-            return 0;
+                printf("Itinerary cleared!\n");
+                break;
+            case 0:
+            default:
+                /* call destroy() and print a farewell message*/
+                //destroy(head);
+                printf("Good-bye!\n");
+                return 0;
         }
     }
     return 0;
@@ -81,16 +85,15 @@ printMenu
 This function prints the main menu.
 Returns: Nothing
 */
-void printMenu()
-{
-printf("\n#########################################\n");
-printf("#            Trip Planner Menu          #\n");
-printf("#########################################\n");
-printf("\t1 - Insert a Destination\n");
-printf("\t2 - Remove a Destination\n");
-printf("\t3 - Print Destinations\n");
-printf("\t4 - Print Itinerary\n");
-printf("\t5 - Clear Itinerary\n");
-printf("\t0 - Quit\n");
-printf("Enter your selection: ");
+void printMenu() {
+    printf("\n#########################################\n");
+    printf("#            Trip Planner Menu          #\n");
+    printf("#########################################\n");
+    printf("\t1 - Insert a Destination\n");
+    printf("\t2 - Remove a Destination\n");
+    printf("\t3 - Print Destinations\n");
+    printf("\t4 - Print Itinerary\n");
+    printf("\t5 - Clear Itinerary\n");
+    printf("\t0 - Quit\n");
+    printf("Enter your selection: ");
 }

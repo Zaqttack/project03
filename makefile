@@ -1,11 +1,11 @@
-output: main.o itinerary.output
-    gcc maino. itinerary.o -o program
+output: main.o itinerary.o
+	gcc main.o itinerary.o -o program
 
 main.o: main.c main.h itinerary.h
-    gcc -c main.c
+	gcc -c main.c
 
-itinerary: itinerary.c itinerary.h
-    gcc -c itinerary.c
+itinerary.o: itinerary.c itinerary.h
+	gcc -c itinerary.c
 
 clean:
-    rm *.o program
+	rm *.o program
