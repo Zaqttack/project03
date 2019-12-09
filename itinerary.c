@@ -68,26 +68,44 @@ Destination* find(Destination *head, char *key) {
 }
 
 Destination* removeNode(Destination *head, char *key) {
-    Destination *temp = head;
-    Destination *prev;
+    Destination *tmp = (Destination*)malloc(sizeof(Destination));
+    Destination *prev = (Destination*)malloc(sizeof(Destination));
+    tmp = head;
 
-    if (temp == NULL)
-        return temp; 
+    if (tmp == NULL)
+        return head;
+    if(strcmp(tmp->airCode, key) == 0) {
+        tmp = head;
+        head = head->next;
+        printf("%s removed\n", tmp->airCode);
 
-    if (strcmp(temp->airCode, key) == 0) { 
-        head = temp->next;
-        free(temp);
-        return NULL; 
+        free(tmp); free(prev);
+        return head;
     }
+    tmp = tmp->next;
 
-    while (strcmp(temp->airCode, key) != 0) { 
-        prev = temp; 
-        temp = temp->next; 
-    } 
+    while(tmp != NULL) {
+        if(strcmp(tmp->airCode, key) == 0) {
+            prev = tmp;
+            prev->next = tmp->next;
 
-    prev->next = temp->next; 
+            free(tmp); free(prev);
+            return head;
+        }
+        if(tmp->next == NULL) {
+            prev = tmp;
+            prev->next = NULL;
+            printf("%s removed\n", tmp->airCode);
 
-    free(temp);
+            free(tmp); free(prev);
+            return head;
+        }
+        prev = tmp;
+        tmp = tmp->next;
+    }
+    
+    printf("%s removed\n", tmp->airCode);
+    free(tmp); free(prev);
     return head;
 } 
 
@@ -127,7 +145,6 @@ void printItinerary(Destination *head) {
 
 Destination* destroy(Destination *head) {
     Destination *prev = (Destination*)malloc(sizeof(Destination));
-    prev = head;
 
     while (head != NULL) {
         head = head->next;

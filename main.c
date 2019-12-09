@@ -61,14 +61,14 @@ int main(int argc, char *argv[])
                 scanf("%s", airCodeChoice);
 
                 newNode = find(head, airCodeChoice);
-                if(newNode != NULL) {
+                if(newNode == NULL) {
                     head = removeNode(head, airCodeChoice);
                 }
                 else {
                     printf("ERROR: Destination does not exist!\n");
                 }
 
-                free(newNode);
+                //free(newNode);
                 break;
             case 3:
                 /* print message to print all the destinations in the itinerary and call print() */
