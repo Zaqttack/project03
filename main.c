@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
                 head = insertAfter(head, newNode, key);
 
                 printf("%s added\n", newNode->airCode);
-                free(newNode);
+                //free(newNode);
                 break;
             case 2:
                 /* 1) ask the user to enter an airport code for the destination

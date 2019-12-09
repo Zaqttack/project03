@@ -82,19 +82,12 @@ Destination* removeNode(Destination *head, char *key) {
         free(tmp); free(prev);
         return head;
     }
+    prev = tmp;
     tmp = tmp->next;
 
-    while(tmp != NULL) {
+    while(tmp != NULL) { 
         if(strcmp(tmp->airCode, key) == 0) {
-            prev = tmp;
             prev->next = tmp->next;
-
-            free(tmp); free(prev);
-            return head;
-        }
-        if(tmp->next == NULL) {
-            prev = tmp;
-            prev->next = NULL;
             printf("%s removed\n", tmp->airCode);
 
             free(tmp); free(prev);
@@ -104,7 +97,6 @@ Destination* removeNode(Destination *head, char *key) {
         tmp = tmp->next;
     }
     
-    printf("%s removed\n", tmp->airCode);
     free(tmp); free(prev);
     return head;
 } 
