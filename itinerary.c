@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,7 +13,6 @@ Destination* create(char *code) {
     strcpy(newNode->airCode, code);
     newNode->next = NULL;
 
-    printf("%s added\n", newNode->airCode);
     return newNode;
 }
 
@@ -23,28 +21,36 @@ Destination* insertAfter(Destination *head, Destination *node, char *key) {
         return node;
     }
 
-    Destination *ptr = head;
-    printf("Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list:");
-    fgets(key, 4, stdin);
+    Destination *tmp = (Destination*)malloc(sizeof(Destination));
+    tmp = head;
 
     if(strcmp(key, "ZZZ") == 0) {
-        ptr->next = head;
-        head = ptr;
+        node->next = head;
+        head = node;
 
         return head;
     }
     else {
-        while(ptr->next != NULL) {
-            if(strcmp(ptr->airCode, key) == 0)
-                node = ptr;
-            ptr = ptr->next;
+        while(tmp != NULL) {
+            if(strcmp(tmp->airCode, key) == 0) {
+                node->next = tmp->next;
+                tmp->next = node;
+
+                return head;
+            }
+
+            if(tmp->next == NULL) {
+                tmp->next = node;
+                node->next = NULL;
+
+                return head;
+            }
+
+            tmp = tmp->next;
         }
-        ptr->next = node;
 
         return head;
     }
-
-    return head;
 }
 
 Destination* find(Destination *head, char *key) {
@@ -61,35 +67,75 @@ Destination* find(Destination *head, char *key) {
     return head;
 }
 
-//Destination* removeNode(Destination *head, char *key) {
-//}
+Destination* removeNode(Destination *head, char *key) {
+    Destination *temp = head;
+    Destination *prev;
+
+    if (temp == NULL)
+        return temp; 
+
+    if (strcmp(temp->airCode, key) == 0) { 
+        head = temp->next;
+        free(temp);
+        return NULL; 
+    }
+
+    while (strcmp(temp->airCode, key) != 0) { 
+        prev = temp; 
+        temp = temp->next; 
+    } 
+
+    prev->next = temp->next; 
+
+    free(temp);
+    return head;
+} 
 
 void printDestinations(Destination *head) {
-    printf("We printin'\n");
-    if(head == NULL) {
+    Destination *tmp = (Destination*)malloc(sizeof(Destination));
+    tmp = head;
+
+    if(tmp == NULL) {
         printf("No Locations added!\n");
         return;
     }
 
-    while(head != NULL) {
-        printf("%s\n", head->airCode);
+    printf("Destinations in Itinerary\n");
+    while(tmp != NULL) {
+        printf("%s\n", tmp->airCode);
         
-        head = head->next;
+        tmp = tmp->next;
     }
 }
 
 void printItinerary(Destination *head) {
-    if(head == NULL) {
+    Destination *tmp = (Destination*)malloc(sizeof(Destination));
+    tmp = head;
+
+    if(tmp == NULL) {
         printf("No Locations added!\n");
         return;
     }
 
-    while(head->next != NULL) {
-        printf("%s-%s", head->airCode, head->next->airCode);
+    printf("Itinerary\n");
+    while(tmp->next != NULL) {
+        printf("%s-%s\n", tmp->airCode, tmp->next->airCode);
 
-        head = head->next;
+        tmp = tmp->next;
     }
 }
 
-//Destination* destroy(Destination *head) {
-//}
+Destination* destroy(Destination *head) {
+    Destination *prev = (Destination*)malloc(sizeof(Destination));
+    prev = head;
+
+    while (head != NULL) {
+        head = head->next;
+
+        free(prev);
+        prev = head;
+    }
+
+    head = NULL;
+    return head;
+}

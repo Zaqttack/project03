@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     Destination *head = NULL;
     Destination *newNode = NULL;
     char airCodeChoice[4];
-    char key[4];
+    char key[4] = "ZZZ";
     
     while(1)
     {
@@ -36,16 +36,20 @@ int main(int argc, char *argv[])
                 if(head != NULL) {
                     newNode = find(head, airCodeChoice);
                     if(newNode == NULL) {
-                        printf("ERROR: Destination already exists\n");
+                        printf("ERROR: Destination already exists!\n");
                         break;
                     }
+
+                    printf("Enter the airport code for which new destination is added after. Enter ZZZ to add to beginning of list:");
+                    scanf("%s", key);
                 }
 
                 newNode = create(airCodeChoice);
 
-                head = insertAfter(head, newNode, "ZZZ");
+                head = insertAfter(head, newNode, key);
 
-                //free(newNode);
+                printf("%s added\n", newNode->airCode);
+                free(newNode);
                 break;
             case 2:
                 /* 1) ask the user to enter an airport code for the destination
@@ -53,26 +57,38 @@ int main(int argc, char *argv[])
                     3) if it exists, call remove() to remove the airport code from the list  
                     4) print a message saying the destination was removed
                 */
+                printf("Enter Airport Code to remove: ");
+                scanf("%s", airCodeChoice);
 
+                newNode = find(head, airCodeChoice);
+                if(newNode != NULL) {
+                    head = removeNode(head, airCodeChoice);
+                }
+                else {
+                    printf("ERROR: Destination does not exist!\n");
+                }
+
+                free(newNode);
                 break;
             case 3:
                 /* print message to print all the destinations in the itinerary and call print() */
-
+                printDestinations(head);
                 break;
             case 4:
                 /* print message to print the itinerary and call printItinerary() */
-                printDestinations(head);
-
+                printItinerary(head);
                 break;
             case 5:
                 /* call destroy() and print the message that the itinerary has been cleared */
+                head = destroy(head);
 
                 printf("Itinerary cleared!\n");
                 break;
             case 0:
             default:
                 /* call destroy() and print a farewell message*/
-                //destroy(head);
+                head = destroy(head);
+
                 printf("Good-bye!\n");
                 return 0;
         }
